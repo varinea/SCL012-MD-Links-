@@ -1,26 +1,30 @@
-const fs = require("fs");
+const fs = require('fs');
 
-//Revisa si el archivo el MarkDown
-const markdown = (path)=>{
+//Aqui estoy llamando a la DATA
+ const leerArchivo = (fileSys)=> { //file es de file system, para instalarlo npm install file-system --save 
+  return new Promise((resolve, reject)=>{
+    console.log('entro')
+    fs.readFile(fileSys,'utf8',(error, data)=>{
+      if(error){
+        reject(new Error('archivo no encontrado'));
+      }
+      resolve(data);
+    });
+  });
+
+};
+
+
+// Verifica si un archivo es Markdown
+const mdLink  = (path)=>{
   if(path.slice(-3) == ".md"){
   console.log(path)
   }
   else{
     console.log("error");
   }
-  return markdown;
+  return mdLink;
   };
 
-  //Leer los archivos
-  const readFile = (file=> {
-    let promise = new Promise ((resolve, reject) => {
-      fs.readFile(file, "UTF-8", (error, data) => {
-        if(error){
-          reject(new Error("Archivo no fue encontrado"))
-        }
-        resolve(data)
-      });
-    });
-    return promise
-  });
-  module.exports = readFile;
+
+  module.exports = leerArchivo;

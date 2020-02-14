@@ -2,6 +2,8 @@
   "name": "md-links",
   "version": "0.1.0",
   "dependencies": {
+    "file-system": "^2.2.2",
+    "marked": "^0.8.0",
     "node-fetch": "^2.6.0"
   }
 }
