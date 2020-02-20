@@ -16,7 +16,6 @@ mdlinks(file)
 			links.push({
 					href: href,
 					text: text,
-					title, title,
 					file: file,
 				});
 		};
@@ -44,11 +43,11 @@ function statusLink(links) {
 		fetch(element.href)
 			.then(response => {
 				if (response.status == 200) {
-					console.log(chalk.green('[✔]'), chalk.cyan(element.href), chalk.bgGreen(` ${response.status} ${response.statusText} `), chalk.yellow(element.text));
+					console.log(chalk.blue('[✔]'), chalk.cyan(element.href), chalk.bgGreen(` ${response.status} ${response.statusText} `), chalk.green(element.text));
 				} else {
-					console.log(chalk.red('[X]'), chalk.cyan(element.href), chalk.bgRed(` ${response.status} ${response.statusText} `), chalk.white(element.text));
+					console.log(chalk.red('[X]'), chalk.cyan(element.href), chalk.bgRed(` ${response.status} ${response.statusText} `), chalk.green(element.text));
 				}
-			}).catch((error) => console.log(chalk.gray('[-]'), chalk.cyan(element.href), chalk.bgRed(` ${error.type} ${error.code} `), chalk.white(element.text)));
+			}).catch((error) => console.log(chalk.gray('[-]'), chalk.cyan(element.href), chalk.bgRed(` ${error.type} ${error.code} `), chalk.green(element.text)));
 	})
 }
 
