@@ -2,7 +2,7 @@
 
 # ¿Qué es MD-Link? 
 
-MD-Link es una librería que facilita la revisión de los links de un archivo con extension .md es decir, archivos tipo Markdown, para así tener conocimientos sobre estos
+MD-Link es una librería que facilita la revisión de los links de un archivo con extension .md es decir archivos tipo Markdown, para así tener conocimientos si estan activos o no.
 
 # Diagrama de flujo 
 ![md-links](imgReadme/flujo_de_trabajo.png)
@@ -15,9 +15,11 @@ Para instalar está librería tienes que tener previamente instalado Node.js y n
 
 Ejecuta la librería desde npm
 
+[Link Npm](https://www.npmjs.com/package/vari-md-links)
 ```
-npm i vari-md-links
+npm i vari-md-links 
 ```
+
 
 Ejecuta la librería desde GitHub
 
