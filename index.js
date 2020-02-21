@@ -1,7 +1,7 @@
 const fs = require("fs"); // FileSystem de node con require q viene de forma global en Nodejs
 
-
-const mArkdown = (path) => { // revisa si un archivo es Markdown llamando a path, el link(url)
+//___________Función que revisa si un archivo es Markdown _______________
+const mArkdown = (path) => {
   if (path.slice(-3) == ".md") {
     console.log(path)
   } else {
@@ -10,7 +10,8 @@ const mArkdown = (path) => { // revisa si un archivo es Markdown llamando a path
   return mArkdown;
 };
 
-// Función que me leé los archivos 
+//___________Función que me leera los archivos del doc _______________
+
 const readTheFile = (file => {
   let promise = new Promise((resolve, reject) => {
     fs.readFile(file, "UTF-8", (error, data) => {
