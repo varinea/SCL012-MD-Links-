@@ -5,6 +5,7 @@ const marked = require('marked');
 const nodeFetch = require('node-fetch');
 
 //___________Argumentos en línea de comandos_______________
+
 let file = process.argv[2];
 file = path.resolve(file);
 file = path.normalize(file); // normaliza los errores de escritura, así los podrá leer bien.
@@ -36,6 +37,7 @@ linkFromTheIndex(file)
   });
 
 //___________Filtra todos los links con prefijo "http"_______________
+
 function prefixLinks(links) {
   let validateLink = [];
   links.map((element) => {
@@ -46,7 +48,9 @@ function prefixLinks(links) {
   })
   return validateLink;
 };
+
 //___________Función que muestra el status de los links a los usuarios_______________
+
 function statusLink(links) {
   links.map((element) => {
     nodeFetch(element.href)
@@ -63,7 +67,7 @@ function statusLink(links) {
 			);
         }
       }).catch((error) =>
-        console.log(chalkForColor.red('[-]'),
+        console.log(chalkForColor.red('[]'),
           chalkForColor.cyan(element.href)
 		
 		  )
