@@ -28,14 +28,14 @@ linkFromTheIndex(file)
     };
     marked(data, {
       renderer: renderer
-    }); // obtiene los links en un array de object
-    let resultGetLinks = prefixLinks(links); // funcion que filtra los links
+    }); 
+    let resultGetLinks = prefixLinks(links); // filtra los links
     statusLink(resultGetLinks); // válida status de los links
   }).catch((err) => {
     console.log(err);
   });
 
-//___________Filtra todos los links con prefijo en http_______________
+//___________Filtra todos los links con prefijo "http"_______________
 function prefixLinks(links) {
   let validateLink = [];
   links.map((element) => {
@@ -53,21 +53,18 @@ function statusLink(links) {
       .then(response => {
         if (response.status == 200) {
           console.log(chalkForColor.green('[✔]'),
-            chalkForColor.cyan(element.href),
-            chalkForColor.bgGreen(` ${response.status} ${response.statusText} `),
-
+            chalkForColor.cyan(element.href)
+          
 			);
         } else {
           console.log(chalkForColor.red('[X]'),
-            chalkForColor.cyan(element.href),
-            chalkForColor.bgRed(` ${response.status} ${response.statusText} `),
-			
+            chalkForColor.cyan(element.href)
+            
 			);
         }
       }).catch((error) =>
         console.log(chalkForColor.red('[-]'),
-          chalkForColor.cyan(element.href),
-          chalkForColor.bgRed(` ${error.type} ${error.code} `),
+          chalkForColor.cyan(element.href)
 		
 		  )
 		  );
