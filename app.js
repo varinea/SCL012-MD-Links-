@@ -1,5 +1,5 @@
 let path = require('path');
-const mdlinks = require('./index')
+const callLinks = require('./index') // Con require logramos importar los archivos.
 const marked = require('marked');
 const fetch = require('node-fetch');
 const chalk = require('chalk');
@@ -8,7 +8,7 @@ let file = process.argv[2]; // matriz que contiene los argumentos de la línea d
 file = path.resolve(file);
 file = path.normalize(file); // si hay errores de escritura, los resuelve para leerlos bien 
 
-mdlinks(file)
+callLinks(file)
 	.then((data) => {
 		let renderer = new marked.Renderer();
 		let links = [];
@@ -50,5 +50,4 @@ function statusLink(links) {
 			}).catch((error) => console.log(chalk.gray('[-]'), chalk.cyan(element.href), chalk.bgRed(` ${error.type} ${error.code} `), chalk.green(element.text)));
 	})
 }
-
 
