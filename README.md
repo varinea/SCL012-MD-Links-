@@ -8,22 +8,40 @@ MD-Link es una librería que facilita la revisión de los links de un archivo co
 ![md-links](imgReadme/flujo_de_trabajo.png)
 
 # Modo de Uso
-1. Para instalar está librería tienes que tener instalado Node.js en tu computador.
 
-2. Para ejecutarla tendrás que ejecutar el siguiente comando el la terminal de tu archivo
+## Instalación
 
-`npm i md_links_varilop`
+Para instalar está librería tienes que tener previamente instalado Node.js y npm en tu computador.
 
-
-## ¿Comó utilizar la librería en mi archivo?
-
-En la terminal tendrás que ejecutar el siguiente comando:
+Ejecuta la librería desde npm
 
 ```
-node mdlinks <nombre_de_tu_archivo>.md
+npm i vari-md-links
 ```
 
-##  Visualización
+Ejecuta la librería desde GitHub
+
+```
+npm install varinea/SCL012-MD-Links-
+```
+
+## Utilización de la Librería
+
+```
+const  mdLinks = require('md-links');
+```
+Luego utiliza los argumentos
+```
+mdLinks(path, options)
+```
+##  Ejecutar la librería en tu proyecto
+
+
+```
+node <<dirección de tu carpeta del proyecto>>/node_modules/md-links/cli.js <<dirección de tu archivo .md>>
+```
+
+##  Ejemplo
 
 ![md-links](imgReadme/showme.png)
 
